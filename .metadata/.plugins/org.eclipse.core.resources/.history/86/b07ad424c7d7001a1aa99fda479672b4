@@ -1,0 +1,10 @@
+package test;
+
+public class tasu{
+		static int j = 0;
+
+		public static int aaa(int num) {
+			j += num;
+			return j;
+	}
+}

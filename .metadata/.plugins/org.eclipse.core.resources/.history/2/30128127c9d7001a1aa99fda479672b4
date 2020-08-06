@@ -1,0 +1,14 @@
+package test;
+
+public class tasu{
+		static int j = 0;
+
+		public static int[][] aaa(int num,int y) {
+			int ban[][] = new int[1][1];
+			ban[0][0] = num+y;
+//			ban[0][1] = num;
+//			ban[1][0] = num*y;
+//			ban[1][1] =y;
+			return ban;
+	}
+}
