@@ -1,0 +1,12 @@
+package test;
+
+public class checked extends tasu {
+	for(int y=0;y<banall.length;y++){ //盤の配列分ループ
+        for(int x=0;x<banall[0].length;x++){
+          String b = banall[y][x];
+          if (b == null ) { //盤にnullがあるなら、"-"で表現
+        	  b = enpty; //上記で指定
+          }
+        }
+	}
+}

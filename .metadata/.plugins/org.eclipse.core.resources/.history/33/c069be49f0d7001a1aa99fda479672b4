@@ -1,0 +1,30 @@
+package test;
+
+public class tasu{
+		static int j = 0;
+		private int x=0;
+		private int y=0;
+
+		public static int[] aaa(int num,int y) {
+			int suchi[]= new int[2];
+			suchi[0] = num+y;
+			suchi[1] = num;
+			return suchi;
+	}
+		private static String[][] banall = new String[8][8];
+		public static void setban(int x,int y,String stone) {
+			 banall[x][y] = stone;
+			 System.out.println(banall[x][y]);
+		}
+		public static void print() {
+			System.out.println("\n\t0\t1\t2\t3\t4\t5\t6\t7\n");
+			for(int y=0;y<banall.length;y++){
+	            System.out.print(y+"\t");
+	            for(int x=0;x<banall[0].length;x++){
+	              String b = banall[y][x];
+	              System.out.print(b+"\t");
+	            }
+	            System.out.println("\n");
+			}
+		}
+}

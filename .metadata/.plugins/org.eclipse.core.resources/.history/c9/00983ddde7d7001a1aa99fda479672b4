@@ -1,0 +1,26 @@
+package test;
+import java.util.Scanner;
+
+public class test {
+	public static Scanner sc = new Scanner(System.in); //入力待ち
+	public static void main(String[] args){
+	int[] black = new int[5];
+	int green = 0;
+	int[][] ban = new int[8][8];
+	String maru = "◯";
+
+	while (true) {
+	System.out.println("数字を入れてください");
+	String suzi = sc.next(); //入力を取得
+	char c0 = suzi.charAt(0),c1 = suzi.charAt(1); //1文字ずつ取り出し
+	int s = Integer.valueOf(suzi);
+	 black =tasu.aaa(s,10);
+		System.out.println(black[0]);
+		System.out.println(black[1]);
+		int i0 = Integer.valueOf(c0),i1 = Integer.valueOf(c1);
+		System.out.println(c0);
+		System.out.println(c1);
+		tasu.setban(i0,i1,maru);
+	}
+	}
+}

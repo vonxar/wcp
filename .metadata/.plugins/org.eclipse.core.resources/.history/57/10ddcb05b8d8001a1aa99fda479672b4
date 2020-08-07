@@ -1,0 +1,23 @@
+package test;
+
+public class checked extends tasu {
+	public static void chekedwin(boolean player){
+	int count = 0;
+	for(int y=0;y<banall.length;y++){ //盤の配列分ループ
+        for(int x=0;x<banall[0].length;x++){
+          String b = banall[y][x];
+          if (player == true) { //kuro
+        	  if (b == "●") {
+        	  count++;
+        	  }
+        	  else {
+        		  count = 0;
+        	  }
+          }
+          else { //shiro
+
+          }
+        }
+	}
+	}
+}

@@ -1,0 +1,19 @@
+package test;
+
+public class tasu{
+		static int j = 0;
+		private int x=0;
+		private int y=0;
+
+		public static int[] aaa(int num,int y) {
+			int suchi[]= new int[2];
+			suchi[0] = num+y;
+			suchi[1] = num;
+			return suchi;
+	}
+		private static String[][] banall = new String[8][8];
+		public static void setban(int x,int y,String stone) {
+			 banall[x][y] = stone;
+			 System.out.println(banall[x][y]);
+		}
+}
