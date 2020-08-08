@@ -5,6 +5,7 @@ public class tasu{
 		private int x=0;
 		private int y=0;
 		static String enpty = "-"; //nullの変わりにいれる
+		static boolean win = false;
 
 		public static int[] aaa(int num,int y) { //数字を入れる配列を作り計算したり
 			int suchi[]= new int[2];

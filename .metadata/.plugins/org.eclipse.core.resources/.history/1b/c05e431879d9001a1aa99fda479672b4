@@ -1,0 +1,135 @@
+package test;
+
+public class checked extends tasu {
+	private static String stone;
+
+	public static boolean chekedwin(boolean player){
+		int count = 0;
+		if(player == true) {
+		 stone = "●";
+		} else {
+		 stone = "◯";
+		}
+		for(int said=0;said<banall.length;said++){ //横
+			count = 0;
+	        for(int a=0;a<banall.length;a++){
+	        	String b = banall[said][a];
+	        	if(count != 5) {
+	        		if (b == stone) {
+		        		  count++;
+		        	}
+	        		else {
+		        		  count = 0;
+		        	}
+		        }
+		        else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		        }
+	        }
+	    }
+		for(int x=0;x<banall.length;x++){ //縦
+			count = 0;
+	        for(int y=0;y<banall[0].length;y++){
+	          String b = banall[y][x];
+	          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
+		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		          }
+	          }
+	        }
+		for(int y=0;y<banall.length+2;y++){ //斜め上
+			int up = 0;
+			int yoko = y;
+			count = 0;
+	        for(int x=0;x<y;x++){
+	        	if((yoko < 0) || (up > 7)) {
+	        	break;
+	        	}
+	            if(y < 8) {
+		          String b = banall[yoko][up];
+		          up++;
+		          yoko--;
+		          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
+		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		          }
+	            }
+	            else {
+	            	switch(y) {
+	            	case 8:
+	            		up=1;
+	            		break;
+	            	case 9:
+	            		up=2;
+	            		break;
+	            	case 10:
+	            		up =3;
+	            		break;
+	            	}
+			        yoko = 7;
+	            	String b = banall[yoko][up];
+	            	up++;
+			          if(count != 5) {
+			        	  if (b == stone) {
+			        		  count++;
+			        	  } else {
+			        		  count = 0;
+			        	  }
+			          }
+			          else {
+			        	  System.out.println(stone+"の勝ちです。");
+			        	  win = true;
+			        	  return win;
+			          }
+	            }
+	          }
+	        }
+
+
+
+		for(int y=0;y<banall.length;y++){ //斜め下
+			count = 0;
+			int down = 0;
+			int yoko=y;
+	        for(int x=y;x<8;x++){
+	        	if((down > 7) || (yoko > 7)) {
+	        		break;
+	        	}
+	          String b = banall[yoko][down];
+	          down++;
+	          yoko++;
+	          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
+		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  break;
+		          }
+	          }
+	        }
+		return win;
+		  }
+	}

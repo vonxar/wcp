@@ -1,0 +1,79 @@
+package test;
+
+public class checked extends tasu {
+	private static String stone;
+
+	public static boolean chekedwin(boolean player){
+	int count = 0;
+	if(player == true) {
+	 stone = "●";
+	} else {
+	 stone = "◯";
+	}
+	for(int x=0;x<banall.length;x++){ //横
+        for(int y=0;y<banall[0].length;y++){
+          String b = banall[y][x];
+          if(count != 5) {
+	        	  if (b == stone) {
+	        		  count++;
+	        		  break;
+	        	  } else {
+	        		  count = 0;
+	        		  break;
+	        	  }
+	          }
+	          else {
+	        	  System.out.println(stone+"の勝ちです。");
+	        	  win = true;
+	        	  return win;
+	          }
+          }
+        }
+	count = 0;
+	for(int y=0;y<banall.length;y++){ //縦
+        for(int x=0;x<banall[0].length;x++){
+          String b = banall[y][x];
+          if(count != 5) {
+	        	  if (b == stone) {
+	        		  count++;
+	        		  break;
+	        	  } else {
+	        		  count = 0;
+	        		  break;
+	        	  }
+	          }
+	          else {
+	        	  System.out.println(stone+"の勝ちです。");
+	        	  win = true;
+	        	  return win;
+	          }
+          }
+        }
+	count = 0;
+	for(int y=4;y<banall.length;y++){ //斜め
+		int up = 0;
+        for(int x=0;x<banall.length;x++){
+        	System.out.println(y);
+          String b = banall[y][x];
+          if(count != 5) {
+	        	  if (b == stone) {
+	        		  count++;
+	        		  break;
+	        	  } else {
+	        		  count = 0;
+	        		  break;
+	        	  }
+	          }
+	          else {
+	        	  System.out.println(stone+"の勝ちです。");
+	        	  win = true;
+	        	  return win;
+	          }
+          up++;
+          }
+        }
+
+
+	return win;
+	  }
+	}

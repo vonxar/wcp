@@ -1,0 +1,33 @@
+package test;
+
+public class checked extends tasu {
+	private static String stone;
+
+	public static void chekedwin(boolean player){
+	int count = 0;
+	if(player == true) {
+	 stone = "●";
+	} else {
+	 stone = "◯";
+	}
+	for(int y=0;y<banall.length;y++){ //盤の配列分ループ
+        for(int x=0;x<banall[0].length;x++){
+          String b = banall[y][x];
+          System.out.println(count);
+          if(count != 5) {
+	        	  if (b == stone) {
+	        		  count++;
+	        		  System.out.println(count);
+	        		  break;
+	        	  } else {
+	        		  count = 0;
+	        		  break;
+	        	  }
+	          }
+	          else {
+	        	  System.out.println(stone+"の勝ちです。");
+	          }
+          }
+        }
+	  }
+	}
