@@ -20,15 +20,11 @@ public class test {
 		while(true) {
 	System.out.print("数字を入れてください(縦横) >");
 	String suzi = sc.next(); //入力を取得
-	char c0 = suzi.charAt(0),c1 = suzi.charAt(1); //1文字ずつ取り出し
-	System.out.print(Character.isDigit(c0));
-	if((suzi.length() != 2) && (Character.isDigit(c0)!=true) && (Character.isDigit(c1)!=true)) {
-		System.out.println("入力に問題があります。もう一度");
-		Integer.parseInt(suzi);
+	if( suzi.length() != 2) {
 		break;
 	}
-
-//	int s = Integer.valueOf(suzi);
+	char c0 = suzi.charAt(0),c1 = suzi.charAt(1); //1文字ずつ取り出し
+	int s = Integer.valueOf(suzi);
 //	 black = tasu.aaa(s,10);
 //	 System.out.println("入力した数字に10を足した数字は"+black[0]+"です");
 		int i0 = Character.getNumericValue(c0), i1 = Character.getNumericValue(c1); //int型に変更

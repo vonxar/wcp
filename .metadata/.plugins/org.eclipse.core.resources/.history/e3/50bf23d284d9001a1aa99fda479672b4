@@ -13,11 +13,6 @@ public class checked extends tasu {
 		for(int said=0;said<banall.length;said++){ //横
 			count = 0;
 	        for(int a=0;a<banall.length;a++){
-	        	 if(count == 5) {
-	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
-		        	  break;
-	        	 }
 	        	String b = banall[said][a];
 	        	if(count != 5) {
 	        		if (b == stone) {
@@ -27,16 +22,16 @@ public class checked extends tasu {
 		        		  count = 0;
 		        	}
 		        }
+		        else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		        }
 	        }
 	    }
 		for(int x=0;x<banall.length;x++){ //縦
 			count = 0;
 	        for(int y=0;y<banall[0].length;y++){
-	        	 if(count == 5) {
-	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
-		        	  break;
-	        	 }
 	          String b = banall[y][x];
 	          if(count != 5) {
 		        	  if (b == stone) {
@@ -45,6 +40,11 @@ public class checked extends tasu {
 		        		  count = 0;
 		        	  }
 		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		          }
 	          }
 	        }
 		for(int y=0;y<banall.length;y++){ //斜め上
@@ -52,11 +52,6 @@ public class checked extends tasu {
 			int yoko = y;
 			count = 0;
 	        for(int x=0;x<y;x++){
-	        	 if(count == 5) {
-	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
-		        	  break;
-	        	 }
 	        	if((yoko < 0) || (up > 7)) {
 	        	break;
 	        	}
@@ -69,6 +64,11 @@ public class checked extends tasu {
 		        	  } else {
 		        		  count = 0;
 		        	  }
+		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
 		          }
 	          }
 	        }
@@ -81,11 +81,6 @@ public class checked extends tasu {
 			int yoko = 7;
 			count = 0;
 	        for(int x=0;x<8;x++){
-	        	 if(count == 5) {
-	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
-		        	  break;
-	        	 }
 	        	if((yoko < 0) || (up > 7)) {
 	        	break;
 	        	}
@@ -99,6 +94,11 @@ public class checked extends tasu {
 		        		  count = 0;
 		        	  }
 		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  return win;
+		          }
 	          }
 	        }
 
@@ -108,11 +108,6 @@ public class checked extends tasu {
 			int down = 0;
 			int yoko=y;
 	        for(int x=y;x<8;x++){
-	        	 if(count == 5) {
-	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
-		        	  break;
-	        	 }
 	        	if((down > 7) || (yoko > 7)) {
 	        		break;
 	        	}
@@ -125,6 +120,11 @@ public class checked extends tasu {
 		        	  } else {
 		        		  count = 0;
 		        	  }
+		          }
+		          else {
+		        	  System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  break;
 		          }
 	          }
 	        }

@@ -28,7 +28,7 @@ public class test {
 		break;
 	}
 
-//	int s = Integer.valueOf(suzi);
+	int s = Integer.valueOf(suzi);
 //	 black = tasu.aaa(s,10);
 //	 System.out.println("入力した数字に10を足した数字は"+black[0]+"です");
 		int i0 = Character.getNumericValue(c0), i1 = Character.getNumericValue(c1); //int型に変更
