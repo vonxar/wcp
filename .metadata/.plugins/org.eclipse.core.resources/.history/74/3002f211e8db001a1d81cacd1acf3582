@@ -50,6 +50,7 @@ public class test {
 		boolean stop = false;
 		stop = checked.cputansaku();
 		if(stop != true) {
+			System.out.println("判定"+stop);
 		check = tasu.setban(x, y, shiro);
 		}
 		if (check == false) {

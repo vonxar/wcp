@@ -412,7 +412,7 @@ public class checked extends tasu {
 				          }
 				}
 
-		for(int y=0;y<=banall.length-5;y++){ //斜め下カバーエリア 止め
+		for(int y=1;y<=banall.length-5;y++){ //斜め下カバーエリア 止め
 			count = 0;
 			int down = y;
 			int yoko=0;
@@ -436,7 +436,7 @@ public class checked extends tasu {
 	            			 }
 	            	 }
 	            	 }
-		        	if((yoko > 7) || (down > 7) || (yoko < 0) || down < 0) {
+		        	if((yoko > 7) || (down > 7)) {
 		        	break;
 		        	}
 		        	String b = banall[yoko][down];

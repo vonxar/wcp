@@ -81,12 +81,13 @@ public class checked extends tasu {
 			int yoko = 7;
 			count = 0;
 	        for(int x=0;x<8;x++){
+	        	System.out.println(count);
 	        	 if(count == 5) {
 	        		 System.out.println(stone+"の勝ちです。");
 		        	  win = true;
 		        	  break;
 	        	 }
-	        	if((yoko <= 0) || (up > 7)) {
+	        	if((yoko <= 0) || (up >= 7)) {
 	        	break;
 	        	}
 	          String b = banall[yoko][up];
@@ -168,7 +169,7 @@ public class checked extends tasu {
 //		int rndx = new Random().nextInt(xs.length);
 //		int rndy = new Random().nextInt(ys.length);
 		 stone = "●";
-		for(int y=0;y<banall.length;y++){ //横　止め
+		for(int y=0;y<banall.length;y++){ //横
 			count = 0;
 	        for(int x=0;x<banall.length;x++){
 	        	 if(count > 2) {
@@ -212,7 +213,7 @@ public class checked extends tasu {
 		        }
 	        }
 	    }
-		for(int x=0;x<banall.length;x++){ //縦 止め
+		for(int x=0;x<banall.length;x++){ //縦
 			count = 0;
 	        for(int y=0;y<banall.length;y++){
 			 if(count > 2) {
@@ -257,12 +258,14 @@ public class checked extends tasu {
 
 
 
-		for(int y=0;y<banall.length;y++){ //斜め上 止め
+		for(int y=0;y<banall.length;y++){ //斜め上
 			int up = 0;
 			int yoko = y;
 			count = 0;
 	        for(int x=0;x<=banall.length;x++){
+	        	System.out.println("c"+count);
 	        	if(count > 2) {
+	        		System.out.println("4.3"+ count);
 	        	 if(count ==4) {
         			 yoko = ys[3]-1;
         			 if ((yoko >= 0) && (xs[3]+1 <=7) && (banall[yoko][xs[3]+1] == null) || (banall[yoko][xs[3]+1] != "◯")) {
@@ -287,6 +290,8 @@ public class checked extends tasu {
 	        	break;
 	        	}
 	          String b = banall[yoko][up];
+	          System.out.println(b);
+	          System.out.println(yoko+"up"+up);
 	          if(b == stone) {
 	          xs[count] = up;
      		  ys[count] = yoko;
@@ -310,155 +315,85 @@ public class checked extends tasu {
 
 
 
-		for(int y=1;y<=banall.length-5;y++){ //斜め上エリアカバー 止め
+		for(int y=1;y<=banall.length-5;y++){ //斜め上エリアカバー
 			int up = y;
 			int yoko = 7;
 			count = 0;
 	        for(int x=0;x<8;x++){
-	        	if(count > 2) {
-	        	 if(count ==4) {
-        			 yoko = ys[3]-1;
-        			 if ((yoko >= 0) && (xs[3]+1 <=7) && (banall[yoko][xs[3]+1] == null) || (banall[yoko][xs[3]+1] != "◯")) {
-        				 System.out.println("iti"+yoko+xs[3]+1);
-        			 tasu.setban(yoko, xs[3]+1, "◯");
-        			 return true;
-        			 }
-        			 else {
-    				  break;
-        			 }
+	        	 if(count == 5) {
+	        		 System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  break;
 	        	 }
-        		 else {
-        			 System.out.println(ys[0]);
-            			 yoko = ys[0]+1;
-            			 if ((yoko >= 0)&&(xs[0]-1 >=0)) {
-            			 tasu.setban(yoko, xs[0]-1, "◯");
-            			 return true;
-            			 }
-            	 }
-            	 }
-	        	if((yoko < 0) || (up > 7)) {
+	        	if((yoko <= 0) || (up >= 7)) {
 	        	break;
 	        	}
-	        	if((yoko < 0) || (up > 7)) {
-		        	break;
-		        	}
-		          String b = banall[yoko][up];
-		          if(b == stone) {
-		          xs[count] = up;
-	     		  ys[count] = yoko;
-		          up++;
-		          yoko--;
-		          count++;
-		           	if((count ==3)&&(banall[yoko][up] == stone)) {
-	     			     xs[count] = up;
-		        		 ys[count] = yoko;
-		        		 count++;
-	     		    }
+	          String b = banall[yoko][up];
+	          up++;
+	          yoko--;
+	          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
 		          }
-		          else {
-		        	          up++;
-			                  yoko--;
-			        		  count = 0;
-			        	  }
-			          }
-			}
+	          }
+	        }
 
 
-		for(int y=0;y<banall.length;y++){ //斜め下 止め
+		for(int y=0;y<banall.length;y++){ //斜め下
 			count = 0;
 			int down = 0;
 			int yoko=y;
-	        	for(int x=0;x<=banall.length;x++){
-		        	if(count > 2) {
-		        	 if(count ==4) {
-	        			 yoko = ys[3]+1;
-	        			 if ((yoko >= 0) && (xs[3]+1 <=7) && (banall[yoko][xs[3]+1] == null) || (banall[yoko][xs[3]+1] != "◯")) {
-	        			 tasu.setban(yoko, xs[3]+1, "◯");
-	        			 return true;
-	        			 }
-	        			 else {
-	    				  break;
-	        			 }
-		        	 }
-	        		 else {
-	            			 yoko = ys[0]-1;
-	            			 if ((yoko >= 0)&&(xs[0]-1 >=0)) {
-	            			 tasu.setban(yoko, xs[0]-1, "◯");
-	            			 return true;
-	            			 }
-	            	 }
-	            	 }
-		        	if((yoko > 7) || (down > 7)) {
-		        	break;
-		        	}
-		        	String b = banall[yoko][down];
-			          if(b == stone) {
-			          xs[count] = down;
-		     		  ys[count] = yoko;
-			          down++;
-			          yoko++;
-			          count++;
-			           	if((count ==3)&&(banall[yoko][down] == stone)) {
-		     			     xs[count] = down;
-			        		 ys[count] = yoko;
-			        		 count++;
-		     		    }
-			          }
-			          else {
-			        	          down++;
-				                  yoko++;
-				        		  count = 0;
-				        	  }
-				          }
-				}
+	        for(int x=y;x<=8;x++){
+	        	 if(count == 5) {
+	        		 System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  break;
+	        	 }
+	        	if((down >7) || (yoko > 7)) {
+	        		break;
+	        	}
+	          String b = banall[yoko][down];
+	          down++;
+	          yoko++;
+	          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
+		          }
+	          }
+	        }
 
-		for(int y=0;y<=banall.length-5;y++){ //斜め下カバーエリア 止め
+		for(int y=1;y<=banall.length-5;y++){ //斜め下カバーエリア
 			count = 0;
 			int down = y;
 			int yoko=0;
 	        for(int x=0;x<8;x++){
-	        	if(count > 2) {
-		        	 if(count ==4) {
-	        			 yoko = ys[3]+1;
-	        			 if ((yoko >= 0) && (xs[3]+1 <=7) && (banall[yoko][xs[3]+1] == null) || (banall[yoko][xs[3]+1] != "◯")) {
-	        			 tasu.setban(yoko, xs[3]+1, "◯");
-	        			 return true;
-	        			 }
-	        			 else {
-	    				  break;
-	        			 }
-		        	 }
-	        		 else {
-	            			 yoko = ys[0]-1;
-	            			 if ((yoko >= 0)&&(xs[0]-1 >=0)) {
-	            			 tasu.setban(yoko, xs[0]-1, "◯");
-	            			 return true;
-	            			 }
-	            	 }
-	            	 }
-		        	if((yoko > 7) || (down > 7) || (yoko < 0) || down < 0) {
-		        	break;
-		        	}
-		        	String b = banall[yoko][down];
-			          if(b == stone) {
-			          xs[count] = down;
-		     		  ys[count] = yoko;
-			          down++;
-			          yoko++;
-			          count++;
-			           	if((count ==3)&&(banall[yoko][down] == stone)) {
-		     			     xs[count] = down;
-			        		 ys[count] = yoko;
-			        		 count++;
-		     		    }
-			          }
-			          else {
-			        	          down++;
-				                  yoko++;
-				        		  count = 0;
-				        	  }
-				          }
-				}
+	        	 if(count == 5) {
+	        		 System.out.println(stone+"の勝ちです。");
+		        	  win = true;
+		        	  break;
+	        	 }
+	        	if((down > 7) || (yoko > 7)) {
+	        		break;
+	        	}
+	          String b = banall[yoko][down];
+	          down++;
+	          yoko++;
+	          if(count != 5) {
+		        	  if (b == stone) {
+		        		  count++;
+		        	  } else {
+		        		  count = 0;
+		        	  }
+		          }
+	          }
+	        }
+
 
 		return false;
 		  }

@@ -417,6 +417,7 @@ public class checked extends tasu {
 			int down = y;
 			int yoko=0;
 	        for(int x=0;x<8;x++){
+	        	System.out.println("測定"+count);
 	        	if(count > 2) {
 		        	 if(count ==4) {
 	        			 yoko = ys[3]+1;

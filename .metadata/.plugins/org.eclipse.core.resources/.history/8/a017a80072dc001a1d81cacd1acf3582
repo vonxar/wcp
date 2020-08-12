@@ -418,6 +418,7 @@ public class checked extends tasu {
 			int yoko=0;
 	        for(int x=0;x<8;x++){
 	        	if(count > 2) {
+	        		System.out.println("測定"count);
 		        	 if(count ==4) {
 	        			 yoko = ys[3]+1;
 	        			 if ((yoko >= 0) && (xs[3]+1 <=7) && (banall[yoko][xs[3]+1] == null) || (banall[yoko][xs[3]+1] != "◯")) {
@@ -436,7 +437,7 @@ public class checked extends tasu {
 	            			 }
 	            	 }
 	            	 }
-		        	if((yoko > 7) || (down > 7) || (yoko < 0) || down < 0) {
+		        	if((yoko > 7) || (down > 7) || (yoko <= 0) || down <= 0) {
 		        	break;
 		        	}
 		        	String b = banall[yoko][down];
