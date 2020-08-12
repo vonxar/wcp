@@ -388,7 +388,7 @@ public class checked extends tasu {
 	            			 }
 	            	 }
 	            	 }
-		        	if((yoko > 7) || (down > 7) || (yoko < 0) || (down < 0)) {
+		        	if((yoko > 7) || (down > 7)) {
 		        	break;
 		        	}
 		        	String b = banall[yoko][down];

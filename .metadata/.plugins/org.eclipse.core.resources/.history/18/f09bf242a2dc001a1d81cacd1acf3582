@@ -16,12 +16,12 @@ public class tasu{
 		public static String[][] banall = new String[8][8]; //配列を作り盤として使う
 		public static  boolean setban(int x,int y,String stone) { //座標と置く石を決める
 			boolean check = true;
+			System.out.println("置けない(y,x)"+y+","+x);
 			if (banall[x][y] == null) {
 			 banall[x][y] = stone;
 			}
 			else {
 				System.out.println("そこには置けません");
-				System.out.println("置けない(y,x)"+y+","+x);
 				check = false;
 				return check;
 			}

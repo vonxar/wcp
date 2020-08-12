@@ -21,7 +21,6 @@ public class tasu{
 			}
 			else {
 				System.out.println("そこには置けません");
-				System.out.println("置けない(y,x)"+y+","+x);
 				check = false;
 				return check;
 			}
