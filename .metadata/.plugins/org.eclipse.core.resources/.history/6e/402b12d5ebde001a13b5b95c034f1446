@@ -4,8 +4,8 @@ public class checked extends tasu {
 	private static String stone;
 
 	public static boolean chekedwin(boolean player){
-		int count = 0; //カウントの初期化
-		if(player == true) { //人なら黒石　cpuなら白石
+		int count = 0;
+		if(player == true) {
 		 stone = "●";
 		} else {
 		 stone = "◯";

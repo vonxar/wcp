@@ -7,7 +7,7 @@ public class tasu{
 		static String enpty = "-"; //nullの変わりにいれる
 		static boolean win = false;
 
-		public static int[] aaa(int num,int y) { //数字を入れる配列を作り計算したり testで作った　使わない
+		public static int[] aaa(int num,int y) { //数字を入れる配列を作り計算したり
 			int suchi[]= new int[2];
 			suchi[0] = num+y;
 			suchi[1] = num;
@@ -16,8 +16,8 @@ public class tasu{
 		public static String[][] banall = new String[8][8]; //配列を作り盤として使う
 		public static  boolean setban(int x,int y,String stone) { //座標と置く石を決める
 			boolean check = true;
-			if (banall[x][y] == null) {//磐に何もなければ
-			 banall[x][y] = stone; //受け取った石
+			if (banall[x][y] == null) {
+			 banall[x][y] = stone;
 			}
 			else {
 				System.out.println("そこには置けません");
@@ -25,6 +25,7 @@ public class tasu{
 				check = false;
 				return check;
 			}
+//			 System.out.println("置かれた石は"+banall[x][y]+"です");
 			return check;
 		}
 		public static void print() { //盤の表示
