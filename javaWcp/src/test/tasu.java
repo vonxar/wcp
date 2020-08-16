@@ -1,6 +1,6 @@
 package test;
 
-public class tasu{
+public class tasu{ //練習の為に使用
 		static int j = 0;
 		private int x=0;
 		private int y=0;
@@ -22,7 +22,7 @@ public class tasu{
 			else {
 				System.out.println("そこには置けません");
 				System.out.println("置けない(y,x)"+y+","+x);
-				check = false;
+				check = false; //置けない場合
 				return check;
 			}
 			return check;

@@ -3,7 +3,7 @@ package test;
 public class checked extends tasu {
 	private static String stone;
 
-	public static boolean chekedwin(boolean player){
+	public static boolean chekedwin(boolean player){  //盤に石がいくつ並んでいるかカウント
 		int count = 0; //カウントの初期化
 		if(player == true) { //人なら黒石　cpuなら白石
 		 stone = "●";
@@ -15,7 +15,7 @@ public class checked extends tasu {
 	        for(int a=0;a<banall.length;a++){
 	        	 if(count == 5) {
 	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
+		        	  win = true; //勝ちに変更
 		        	  break;
 	        	 }
 	        	String b = banall[said][a];
@@ -34,7 +34,7 @@ public class checked extends tasu {
 	        for(int y=0;y<banall[0].length;y++){
 	        	 if(count == 5) {
 	        		 System.out.println(stone+"の勝ちです。");
-		        	  win = true;
+		        	  win = true; //勝ちに変更
 		        	  break;
 	        	 }
 	          String b = banall[y][x];
@@ -161,7 +161,7 @@ public class checked extends tasu {
 
 
 
-	public static boolean cputansaku(){
+	public static boolean cputansaku(){ //cpu3つ、4つ並んだら止める為に探索（まだエラーが出る）
 		int count = 0;
 		int xs[] = new int[4];
 		int ys[] = new int[4];
@@ -175,7 +175,7 @@ public class checked extends tasu {
 	        		 if((count ==4)&&(banall[y][xs[3]+1] != "◯" )) {
 	        			 int tate = xs[3]+1;
 	        			 if ((tate > 0) && (banall[y][tate] == null) || (banall[y][tate] != "◯")) {
-	        			 tasu.setban(y, tate, "◯");
+	        			 tasu.setban(y, tate, "◯"); //石を止める為に置く
 	        			 return true;
 	        			 }
 	        			 else {
